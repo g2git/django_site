@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Presentation List</h1>
+  {% if presentation_list %}
+    <ul>
+      {% for presentation in presentation_list %}
+      <li>
+        <a href="{{ presentation.get_absolute_url }}">{{ presentation.title }}</a>, Author: {{ presentation.author }}, Status: {{ presentation.status }}
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no presentations to view.</p>
+  {% endif %}
+{% endblock %}

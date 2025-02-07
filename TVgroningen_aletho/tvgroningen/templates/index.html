@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>TVGroningen</h1>
+  <p>
+    Welcome to TVGroningen Alétho
+  </p>
+  <h2>Content</h2>
+  <p>The website has the following presentations:</p>
+  <ul>
+    <li><strong>Presentations:</strong> {{ num_presentations }}</li>
+  </ul>
+  {% load static %}
+  <img
+    src="{% static 'tvgroningen/images/al_tho_logo.jpg' %}"
+    alt="Aletho logo"
+    style="width:555px;height:540px;" />
+{% endblock %}

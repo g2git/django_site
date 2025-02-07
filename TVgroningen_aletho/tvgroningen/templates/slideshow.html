@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+    <style>
+        .slide {
+            display: none;
+        }
+        .slide.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        {% for instance in instances %}
+        <div class="slide {% if forloop.first %}active{% endif %}" data-duration="{{ instance.duration }}" data-color="{{ instance.color }}">
+            <h2>{{ instance.title }}</h2>
+            <p>{{ instance.summary }}</p>
+            <img src="{{ instance.image.url }}" style="width: 25%; height: auto;" alt="{{ instance.title }}">
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <script>
+        // Assuming a simple slider with JavaScript
+
+        // Grab all slides
+        const slides = document.querySelectorAll('.slide');
+
+        let currentSlide = 0;
+
+        function showSlide() {
+            // Hide all slides
+            slides.forEach(slide => slide.style.display = 'none');
+
+            // Show the current slide
+            slides[currentSlide].style.display = 'block';
+            document.body.style.backgroundColor = slides[currentSlide].getAttribute('data-color');
+
+            // Get the duration of the current slide (in seconds)
+            const duration = parseFloat(slides[currentSlide].getAttribute('data-duration'));  // Convert to milliseconds
+
+            // Set a timeout for the next slide
+            setTimeout(() => {
+                currentSlide = (currentSlide + 1) % slides.length;  // Loop back to the first slide
+                showSlide();
+            }, duration);
+        }
+
+        // Initially show the first slide and start the slide show
+        showSlide();
+        // Initially set the background color for the first slide
+        document.body.style.backgroundColor = slides[0].getAttribute('data-color');
+    </script>
+</body>
+</html>

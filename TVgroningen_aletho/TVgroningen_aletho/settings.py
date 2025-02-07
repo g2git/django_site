@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# configuration to handle media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Application definition
 
@@ -38,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Add application
-    'tvgroningen.apps.TvgroningenConfig'
+    'tvgroningen.apps.TvgroningenConfig',
+    'colorfield',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +69,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # custom context processor for the current datetime
+                'tvgroningen.context_processors.current_time.current_time',
             ],
         },
     },

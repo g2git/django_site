@@ -1,0 +1,37 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Wie zijn we?</h1>
+  <p>
+    <b>Voorgestelde tekst:</b> Ons site adres is:<a href="{% url 'index' %}"> https://tvgroningen.aletho.nl</a>
+  </p>
+  <h1>Reacties</h1>
+  <p><b>Voorgestelde tekst:</b> Als bezoekers reacties achterlaten op de site, verzamelen we de gegevens getoond in het reactieformulier, het IP-adres van de bezoeker en de browser user agent om te helpen spam te detecteren.
+    <br><br>
+    Een geanonimiseerde string, gemaakt op basis van je e-mailadres (dit wordt ook een hash genoemd) kan worden gestuurd naar de Gravatar dienst indien je dit gebruikt. De privacybeleid pagina van de Gravatar dienst kun je hier vinden: <a href="https://automattic.com/privacy/"> https://automattic.com/privacy/</a>. Nadat je reactie is goedgekeurd, is je profielfoto publiekelijk zichtbaar in de context van je reactie.</p>
+    <h1>Media</h1>
+    <p><b>Voorgestelde tekst:</b> Als je een geregistreerde gebruiker bent en afbeeldingen naar de site upload, moet je voorkomen dat je afbeeldingen uploadt met daarin EXIF GPS locatie gegevens. Bezoekers van de site kunnen de afbeeldingen van de site downloaden en de locatiegegevens inzien.</p>
+    <h1>Cookies</h1>
+    <p><b>Voorgestelde tekst:</b> Wanneer je een reactie achterlaat op onze site, kun je aangeven of je naam, je e-mailadres en site in een cookie opgeslagen mogen worden. Dit doen we voor je gemak zodat je deze gegevens niet opnieuw hoeft in te vullen voor een nieuwe reactie. Deze cookies zijn een jaar lang geldig.
+        <br><br>
+        Indien je onze inlogpagina bezoekt, slaan we een tijdelijke cookie op om te controleren of je browser cookies accepteert. Deze cookie bevat geen persoonlijke gegevens en wordt verwijderd zodra je je browser sluit.
+        <br><br>
+        Zodra je inlogt, zullen we enkele cookies bewaren in verband met je login informatie en schermweergave opties. Login cookies zijn 2 dagen geldig en cookies voor schermweergave opties 1 jaar. Als je "Herinner mij" selecteert, wordt je login 2 weken bewaard. Zodra je uitlogt van je account, worden login cookies verwijderd.
+        <br><br>
+        Wanneer je een bericht wijzigt of publiceert wordt een aanvullende cookie door je browser opgeslagen. Deze cookie bevat geen persoonlijke data en heeft enkel het post ID van het artikel wat je hebt bewerkt in zich. Deze cookie is na een dag verlopen.
+    </p>
+    <h1>Ingesloten inhoud van andere sites</h1>
+    <p><b>Voorgestelde tekst:</b> Berichten op deze site kunnen ingesloten inhoud bevatten (bijvoorbeeld video's, afbeeldingen, berichten, enz.). Ingesloten inhoud van andere sites gedraagt zich exact hetzelfde alsof de bezoeker deze andere site heeft bezocht.
+        <br><br>
+        Deze sites kunnen gegevens over je verzamelen, cookies gebruiken, extra tracking van derde partijen insluiten en je interactie met deze ingesloten inhoud monitoren, inclusief het vastleggen van de interactie met ingesloten inhoud als je een account hebt en ingelogd bent op die site</p>
+    <h1>Met wie we je gegevens delen</h1>
+    <p><b>Voorgestelde tekst:</b> Als je een wachtwoord reset aanvraagt, wordt je IP-adres opgenomen in de reset e-mail.</p>
+    <h1>Hoelang we je gegevens bewaren?</h1>
+    <p><b>Voorgestelde tekst:</b> Wanneer je een reactie achterlaat dan wordt die reactie en de metadata van die reactie voor altijd bewaard. Op deze manier kunnen we vervolgreacties automatisch herkennen en goedkeuren in plaats van dat we ze moeten modereren.
+        <br><br>
+        Voor gebruikers die zich op onze site registreren (indien aanwezig), slaan we ook de persoonlijke informatie op die ze verstrekken in hun gebruikersprofiel. Alle gebruikers kunnen op ieder moment hun persoonlijke informatie bekijken, bewerken of verwijderen (behalve dat ze hun gebruikersnaam niet kunnen wijzigen). Site beheerders kunnen deze informatie ook bekijken en bewerken.</p>
+    <h1>Welke rechten je hebt over je gegevens?</h1>
+    <p><b>Voorgestelde tekst:</b> Als je een account hebt op deze site of je hebt reacties achtergelaten, kan je verzoeken om een exportbestand van je persoonlijke gegevens die we van je hebben, inclusief alle gegevens die je ons opgegeven hebt. Je kan ook verzoeken dat we alle persoonlijke gegevens die we van je hebben wissen. Dit is exclusief alle gegevens die we verplicht moeten bewaren in verband met administratieve, wettelijke of beveiligings doeleinden.</p>
+    <h1>Waar je gegevens naar toe worden gezonden</h1>
+    <p><b>Voorgestelde tekst:</b> Mogelijk worden reacties van bezoekers gecontroleerd via een geautomatiseerde spamdetectie service.</p>
+{% endblock %}
