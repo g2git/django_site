@@ -16,10 +16,12 @@
 <body>
     <div class="slideshow-container">
         {% for instance in instances %}
-        <div class="slide {% if forloop.first %}active{% endif %}" data-duration="{{ instance.duration }}" data-color="{{ instance.color }}">
+        <div class="slide" data-duration="{{ instance.duration }}" data-color="{{ instance.color }}">
             <h2>{{ instance.title }}</h2>
             <p>{{ instance.summary }}</p>
+            {% if instance.image %}
             <img src="{{ instance.image.url }}" style="width: 25%; height: auto;" alt="{{ instance.title }}">
+            {% endif %}
         </div>
         {% endfor %}
     </div>

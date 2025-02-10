@@ -7,9 +7,11 @@
   <!-- author detail link not yet defined -->
   <p><strong>Summary:</strong> {{ presentation.summary }}</p>
   <p><strong>Status:</strong> {{ presentation.status }}
+  {% if presentation.image %}
   <p><strong>Image:</strong> {{ presentation.image.name }}
     <br>
   <img src="{{ presentation.image.url }}" style="width: 25%; height: auto;" alt="{{ presentation.title }}">
+  {% endif %}
   </div>
 
 {% endblock %}

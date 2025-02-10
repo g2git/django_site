@@ -39,6 +39,9 @@ class PresentationListView(generic.ListView):
     model = Presentation
     context_object_name = 'presentation_list'   # name for the list as a template variable
     paginate_by = 2
+
+    def get_queryset(self):
+        return Presentation.objects.all().order_by('id')
     
 class PresentationDetailView(generic.DetailView):
     model = Presentation
