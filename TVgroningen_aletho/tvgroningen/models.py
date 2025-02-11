@@ -54,8 +54,38 @@ class Presentation(models.Model):
         choices=STATUS_CHOICES,
         default=ACTIVE,
     )
+
+    # Font size of the summary text
+    FONT_SIZE_CHOICES = [
+        ('small', 'Small'),
+        ('medium', 'Medium'),
+        ('large', 'Large'),
+        ('x-large', 'Extra Large')
+    ]
+
+    font_size = models.CharField(
+        max_length=10,
+        choices=FONT_SIZE_CHOICES,
+        default='medium',
+    )
+
     
     image = models.ImageField(upload_to='images/',  null=True, blank=True)
+
+    # Choices for the image placements.
+    IMAGE_POSITION_CHOICES = [
+        ('left', 'Left of Text'),
+        ('right', 'Right of Text'),
+        ('above', 'Above Text'),
+        ('below', 'Below Text'),
+        ('default', 'Default Position')
+    ]
+
+    image_position = models.CharField(
+        max_length=8,
+        choices=IMAGE_POSITION_CHOICES,
+        default='right',
+    )
 
     def __str__(self):
         """String for representing the Model object."""
@@ -64,3 +94,4 @@ class Presentation(models.Model):
     def get_absolute_url(self):
         """Returns the URL to access a detail record for this presentation."""
         return reverse('presentation-detail', args=[str(self.id)])
+    

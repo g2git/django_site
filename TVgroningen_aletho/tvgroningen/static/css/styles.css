@@ -4,3 +4,13 @@
     list-style: none;
   }
   
+  .left { float: left; margin-right: 20px; }
+  .right { float: right; margin-left: 20px; }
+  .above { display: block; margin-bottom: 10px; }
+  .below { display: block; margin-top: 10px; }
+  .clear { clear: both; }
+
+  .small { font-size: 12px; }
+  .medium { font-size: 16px; }
+  .large { font-size: 24px; }
+  .x-large { font-size: 32px; }
