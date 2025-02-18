@@ -4,13 +4,61 @@
     list-style: none;
   }
   
-  .left { float: left; margin-right: 20px; }
-  .right { float: right; margin-left: 20px; }
-  .above { display: block; margin-bottom: 10px; }
-  .below { display: block; margin-top: 10px; }
-  .clear { clear: both; }
+  .text-with-image .left-right {
+    max-width: 50%;
+    height: auto;
+    display: flex;
+    align-items: start;
+}
 
-  .small { font-size: 12px; }
-  .medium { font-size: 16px; }
-  .large { font-size: 24px; }
-  .x-large { font-size: 32px; }
+.text-with-image .image-left {
+    margin-right: 15px;
+}
+
+.text-with-image .image-right {
+    margin-left: 15px;
+}
+
+.text-with-image .image-above,
+.text-with-image .image-below {
+    /* max-width: 50%;
+    height: auto; */
+    display: block;
+    margin: 10px 0;
+}
+
+.text-with-image .pad {
+    padding: 80px;
+}
+
+.text-with-image img {
+    max-width: 75%; /* Adjust image size */
+    height: auto;
+}
+
+.small { font-size: 24px; }
+.medium { font-size: 32px; }
+.large { font-size: 40px; }
+.x-large { font-size: 48px; }
+
+img:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}

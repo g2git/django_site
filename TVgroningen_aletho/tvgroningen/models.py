@@ -27,7 +27,7 @@ class Presentation(models.Model):
     """Model representing a book (but not a specific copy of a book)."""
     title = models.CharField(max_length=200)
     
-    # Foreign Key used because book can only have one user, but users can have multiple presentations.
+    # Foreign Key used because presentation can only have one user, but users can have multiple presentations.
     # user = models.ForeignKey(User, on_delete=models.RESTRICT, null=True)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
     
